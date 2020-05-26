@@ -1,0 +1,1 @@
+{"$type":"Tfl.Api.Presentation.Entities.SearchResponse, Tfl.Api.Presentation.Entities","query":"great portland street","matches":[{"topMostParentId":"940GZZLUGPS","modes":["tube","bus"],"zone":"1","id":"940GZZLUGPS","name":"Great Portland Street Underground Station"}]}

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>TFl Bus Info</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+          crossorigin="anonymous">
+</head>
+<body>
+<div class="container my-2">
+    <div class="card">
+        <div class="card-body">
+            <h3>Bus Arrival Timings</h3>
+            <div class="container my-5">
+                <div class="col-md-10">
+                    <h3 th:if="${#lists.isEmpty(businfos)}">No information available!</h3>
+                    <div th:unless="${#lists.isEmpty(businfos)}">
+                        <table class="table table-striped table-responsive-md">
+                            <thead>
+                            <tr>
+                                <th>Bus No.</th>
+                                <th>Towards</th>
+                                <th>Arrival Time</th>
+                                <th>Stop</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr th:each="businfo : ${businfos}">
+                                <td th:text="${businfo.lineName}"></td>
+                                <td th:text="${businfo.towards}"></td>
+                                <td th:text="${businfo.expectedArrival}"></td>
+                                <td th:text="${businfo.platformName}"></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
